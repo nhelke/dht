@@ -197,8 +197,7 @@ func listen(listenPort int) (socket *net.UDPConn, err error) {
 	listener, err := net.ListenPacket("udp4", ":"+strconv.Itoa(listenPort))
 	if err != nil {
 		// debug.Println("DHT: Listen failed:", err)
-	}
-	if listener != nil {
+	} else {
 		socket = listener.(*net.UDPConn)
 	}
 	return
